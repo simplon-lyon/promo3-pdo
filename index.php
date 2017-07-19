@@ -111,6 +111,23 @@ try {
                 $ligneid['id']);
         var_dump($chien);
     }
+    $name = 'test';
+    $race = 'test';
+    $birthdate = '2015-10-10';
+    $isGood = true;
+    //On prepare notre requête avec ses paramètres en placeholder
+    $queryInsert = $db->prepare('INSERT INTO small_doggo '
+            . '(name,race,birthdate,is_good) '
+            . 'VALUES (:name,:race,:birthdate,:isGood)');
+    //On assigne les paramètres
+    $queryInsert->bindParam('name', $name, PDO::PARAM_STR);
+    $queryInsert->bindParam('race', $race, PDO::PARAM_STR);
+    $queryInsert->bindParam('birthdate', $birthdate, PDO::PARAM_STR);
+    $queryInsert->bindParam('isGood', $isGood, PDO::PARAM_BOOL);
+    //On exécute
+    $queryInsert->execute();
+    //on récupère l'id de la ligne qui vient d'être ajoutée
+    echo $db->lastInsertId();
     
     
     
