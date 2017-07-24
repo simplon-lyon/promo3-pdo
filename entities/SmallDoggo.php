@@ -25,5 +25,47 @@ class SmallDoggo {
         $this->birthdate = $birthdate;
         $this->isGood = $isGood;
     }
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getName() {
+        return $this->name;
+    }
+
+    function getRace() {
+        return $this->race;
+    }
+
+    function getBirthdate() {
+        return $this->birthdate;
+    }
+
+    function getIsGood() {
+        return $this->isGood;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setName($name) {
+        $this->name = $name;
+    }
+
+    function setRace($race) {
+        $this->race = $race;
+    }
+
+    function setBirthdate($birthdate) {
+        $this->birthdate = $birthdate;
+    }
+
+    function setIsGood($isGood) {
+        $this->isGood = $isGood;
+    }
+
+
 
 }

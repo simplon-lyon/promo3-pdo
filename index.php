@@ -120,10 +120,10 @@ try {
             . '(name,race,birthdate,is_good) '
             . 'VALUES (:name,:race,:birthdate,:isGood)');
     //On assigne les paramètres
-    $queryInsert->bindParam('name', $name, PDO::PARAM_STR);
-    $queryInsert->bindParam('race', $race, PDO::PARAM_STR);
-    $queryInsert->bindParam('birthdate', $birthdate, PDO::PARAM_STR);
-    $queryInsert->bindParam('isGood', $isGood, PDO::PARAM_BOOL);
+    $queryInsert->bindValue('name', $name, PDO::PARAM_STR);
+    $queryInsert->bindValue('race', $race, PDO::PARAM_STR);
+    $queryInsert->bindValue('birthdate', $birthdate, PDO::PARAM_STR);
+    $queryInsert->bindValue('isGood', $isGood, PDO::PARAM_BOOL);
     //On exécute
     $queryInsert->execute();
     //on récupère l'id de la ligne qui vient d'être ajoutée
