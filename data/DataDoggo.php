@@ -46,7 +46,7 @@ class DataDoggo {
      * @param int $id l'id du chien à récupèrer
      * @return SmallDoggo Le chien correspondant à l'id fourni
      */
-    public function getDoggoById(int $id): SmallDoggo {
+    public function getDoggoById(int $id) {
         //On prépare la requête de sélection par id avec un
         //placeholder pour la valeur de l'id
         $queryId = $this->db->prepare('SELECT * FROM small_doggo WHERE id=:id');
@@ -87,7 +87,7 @@ class DataDoggo {
         if ($queryInsert->execute()) {
             //si oui on récupère l'id de la ligne qui vient d'être ajoutée
             //On le convertit en int et on l'assigne à notre chien
-            $doge->setId(parseInt($this->db->lastInsertId()));
+            $doge->setId(intval($this->db->lastInsertId()));
             //On renvoie true pour dire que tout s'est bien passé
             return true;
         }
